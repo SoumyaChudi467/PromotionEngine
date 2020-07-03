@@ -20,7 +20,7 @@
     "PromotionEngine": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "weatherforecast",
+      "launchUrl": "PromotionEngine",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PromotionEngine", "PromotionEngine\PromotionEngine.csproj", "{963EFC7E-D758-4E9D-97E1-5501AFEE4500}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PromotionEngine.Api", "PromotionEngine\PromotionEngine.Api.csproj", "{963EFC7E-D758-4E9D-97E1-5501AFEE4500}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PromotionEngine.Contracts", "PromotionEngine.Contracts\PromotionEngine.Contracts.csproj", "{070F0072-C7D8-41E0-ADD2-AF052AA63686}"
 EndProject

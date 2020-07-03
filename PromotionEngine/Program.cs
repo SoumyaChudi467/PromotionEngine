@@ -6,8 +6,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using PromotionEngine.Api;
 
-namespace PromotionEngine
+namespace PromotionEngine.Api
 {
     public class Program
     {

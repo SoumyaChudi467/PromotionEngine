@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PromotionEngine.Contracts;
 
-namespace PromotionEngine.Controllers
+namespace PromotionEngine.Api.Controllers
 {
     [Route("promotion")]
     [ApiController]
