@@ -44,15 +44,10 @@ namespace PromotionEngine.Handlers
         private long ProductAAndBPromotion(int productCount, int discountPrice, int discountProductCount,
             int unitPrice)
         {
-            long total;
-           
-           var remainder = productCount % discountProductCount;
-           var quotient = productCount / discountProductCount;
+           var price = (productCount % discountProductCount) * unitPrice;
+           var discount = (productCount / discountProductCount) * discountPrice;
 
-           var price  = remainder * unitPrice;
-           var discount = quotient * discountPrice;
-
-           total = price + discount;
+           long total = price + discount;
    
             return total;
         }
