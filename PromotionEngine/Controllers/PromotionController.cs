@@ -1,34 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+using PromotionEngine.Contracts;
 
 namespace PromotionEngine.Controllers
 {
+    [Route("promotion")]
     [ApiController]
-    [Route("[controller]")]
     public class PromotionController : ControllerBase
     {
         private readonly IMediator _mediator;
 
-        public PromotionController(ILogger<PromotionController> logger)
+        public PromotionController(IMediator mediator)
         {
-            _logger = logger;
+            _mediator = mediator;
         }
 
-        [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        
+        /// <summary>
+        /// Get Total count after applying promotion
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns>Total price</returns>
+        [ProducesResponseType(typeof(RetrieveTotalUsingPromotionsRs), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(RetrieveTotalUsingPromotionsRs), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(RetrieveTotalUsingPromotionsRs), StatusCodes.Status500InternalServerError)]
+        [HttpPost("retrieveTotalUsingPromotions")]
+        public async Task<IActionResult> RetrieveTotalUsingPromotions([FromBody] RetrieveTotalUsingPromotionsRq request)
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+           var result = await _mediator.Send(request);
+            return Ok(result);
         }
+ 
     }
 }
