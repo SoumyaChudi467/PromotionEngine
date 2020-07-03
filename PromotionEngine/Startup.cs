@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PromotionEngine.Contracts;
+using PromotionEngine.Handlers;
 
 namespace PromotionEngine.Api
 {
@@ -20,7 +22,7 @@ namespace PromotionEngine.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddMediatR(typeof(Startup).Assembly);
+            services.AddMediatR(typeof(RetrieveTotalUsingPromotionsHandler).Assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
